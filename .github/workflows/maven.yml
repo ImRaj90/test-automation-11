@@ -47,6 +47,8 @@ jobs:
         server_address: smtp.gmail.com
         # Server port, default 25:
         server_port: 465
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}        
         # Optional whether this connection use TLS (default is true if server_port is 465)
         secure: false
         # Required mail subject:

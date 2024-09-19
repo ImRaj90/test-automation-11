@@ -26,7 +26,7 @@ public class AppTest
 		driver.get("https://login.salesforce.com");
 		driver.findElement(By.id("username")).sendKeys("rajashekar231@outlook.com.sandbox");
 		driver.findElement(By.id("password")).sendKeys("test1234");
-		driver.findElement(By.id("Login")).click();	
+		driver.findElement(By.id("Home | Salesforce")).click();	
 		String ActualTitle = driver.getTitle();
 		String ExpectedTitle = "Login";
 		System.out.println(ActualTitle);

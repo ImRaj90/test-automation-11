@@ -34,6 +34,7 @@ jobs:
         name: assets-for-download
         path: ./target/surefire-reports    
     - name: Send mail
+      if: always() && true
       uses: dawidd6/action-send-mail@v3
       with:
         # Specify connection via URL (replaces server_address, server_port, secure,

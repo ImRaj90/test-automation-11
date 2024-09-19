@@ -26,10 +26,7 @@ jobs:
         mvn -B package --file pom.xml
         mvn clean test
         ls -ltr
-    - name: display results with Maven
-      run: | 
-        ls -ltr
-        tree .
+        tree target
     - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v4
       with: 

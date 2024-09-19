@@ -22,7 +22,7 @@ public class AppTest
     {
         ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless=new");
-		WebDriver driver = new ChromeDriver(options);
+//		WebDriver driver = new ChromeDriver(options);
 		driver.get("https://login.salesforce.com");
 		driver.findElement(By.id("username")).sendKeys("rajashekar231@outlook.com.sandbox");
 		driver.findElement(By.id("password")).sendKeys("test1234");

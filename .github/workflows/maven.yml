@@ -34,3 +34,4 @@ jobs:
     - name: display results with Maven
       run: | 
         ls -ltr
+        tree .

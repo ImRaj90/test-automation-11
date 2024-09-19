@@ -27,3 +27,5 @@ jobs:
         mvn -B package --file pom.xml
         ls -ltr
         mvn clean test
+        ls -ltr
+

@@ -28,4 +28,7 @@ jobs:
         ls -ltr
         mvn clean test
         ls -ltr
-
+    - name: Publish Test Report
+      uses: starburstdata/action-testng-report@v1
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

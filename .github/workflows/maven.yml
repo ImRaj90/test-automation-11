@@ -33,7 +33,41 @@ jobs:
       with: 
         name: assets-for-download
         path: ./target/surefire-reports    
-  
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
+      with:
+        # Specify connection via URL (replaces server_address, server_port, secure,
+        # username and password)
+        #
+        # Format:
+        #
+        #  * smtp://user:password@server:port
+        #  * smtp+starttls://user:password@server:port
+        server_address: smtp.gmail.com
+        # Server port, default 25:
+        server_port: 465
+        # Optional whether this connection use TLS (default is true if server_port is 465)
+        secure: true
+        # Required mail subject:
+        subject: Github Actions job result
+        # Required recipients' addresses:
+        to: rajashekar231@outlook.com
+        # Required sender full name (address can be skipped):
+        from: Luke Skywalker # <user@example.com>
+        # Optional plain body:
+        body: Build job of ${{github.repository}} completed successfully!
+        # Optional HTML body read from file:
+        html_body: ./target/surefire-reports/emailable-report.html
+        # Optional carbon copy recipients:
+        cc: swamyrajashekar@gmail.com.com
+        attachments: ./target/surefire-reports/emailable-report.html
+        # Optional priority: 'high', 'normal' (default) or 'low'
+        priority: low
+        # Optional nodemailerlog: true/false
+        nodemailerlog: false
+        # Optional nodemailerdebug: true/false if true lognodem will also be set true
+        nodemailerdebug: false        
+      
   
 
         
